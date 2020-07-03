@@ -7,24 +7,10 @@ import { fetchPosts } from './dataProvider';
 
 /**
  * @function
- * @description Assigns users to each post
- * @param {Array} posts List of posts
+ * @description Returns the user's name
  * @param {Array} users List of users
+ * @param {String} userId User ID
  */
-function assignUsers (posts, users) {
-  posts.forEach(
-    post => {
-      users.forEach(
-        user => {
-          if (post.userId === user.id) {
-            post.user = user;
-          }
-        }
-      )
-    }
-  );
-}
-
 function getUsername (users, userId) {
   const user = users.find(user => (user.id === userId));
   return user ? user.name : 'N/A';
